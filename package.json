@@ -1,12 +1,23 @@
 {
   "name": "fitness-app",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck",
+    "clean": "rm -rf .next node_modules/.cache",
+    "vercel-build": "npm run build",
+    "deploy": "vercel",
+    "deploy:prod": "vercel --prod",
+    "preview": "vercel dev"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   },
   "dependencies": {
     "clsx": "^2.1.1",
